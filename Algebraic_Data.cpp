@@ -11,6 +11,27 @@ using std::string;
 // };
 
 
+class Shape {
+    virtual double area() = 0;
+};
+
+class Circle {
+    double radius;
+public:
+    Circle(double r): radius(r) {};
+    double area() { return 3.14 * radius * radius; }
+    double circ() { return 2 * 3.14 * radius; }
+};
+
+class Rect {
+    double width, height;
+public:
+    Rect(double w, double h): width(w), height(h) {};
+    double area() { return width * height; }
+    double circ() { return 2 * (width + height); }
+};
+
+
 template<class A>
 class Node {
   A value;
